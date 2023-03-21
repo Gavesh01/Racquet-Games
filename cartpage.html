@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    
+    <!--CSS-->
+    <style>
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* the cart*/
+        .cartgrid {
+            grid-template-columns:23% 25% 12% 8% 12% 20%;
+            padding: 5px;
+            width: 55vw;
+            grid-template-rows: 200px;
+            display: grid;
+            border-radius: 5px;
+            box-shadow: 0 1rem 3rem rgb(26 161 203 / 23%);
+            background: rgba(255, 255, 255, 0.89);
+            margin: 0 auto 2px auto;
+        }
+
+        .cartgrid_items img {
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .cartheader_row {
+            border-top: 1px solid #eee;
+            grid-template-rows: 42px !important;
+            border-radius: 5px;
+            border-bottom: 1px solid #eee;
+        }    
+
+        .cartgrid_items {
+            margin: 2px !important;
+            background: rgba(234, 234, 234, 0.38);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .cartheader_row p {
+            padding: 3px;
+            color: #1F618D;
+            font-weight: 750;
+        }
+
+        .remove {
+            padding: 7px;
+            background: #144e73;
+            width: 100px;
+            color: white;
+            margin: 35px auto 10px auto;
+            border-radius: 5px;
+            display: block;
+            border: 1px #57718f solid;
+        }
+
+        .formcontrol_container {
+            flex-direction: column;
+            margin: 30px 20px;
+            display: flex;
+        }
+
+        .remove:hover {
+            background-color: #a5131e;
+        }
+
+        .grid-container-form {
+            width: 43vw;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            box-shadow: 0 1rem 3rem rgb(26 161 203 / 23%);
+            margin: 60px auto;
+            background: #ffeeee;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.89);
+            border-radius: 5px;
+        }
+
+        .form-btn {
+            background: #144e73;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            border: 1px #15c4d3 solid;
+        }
+
+        .form-btn:hover {
+            background-color: #535353;
+        }
+
+        .centerAlign {
+            margin: auto 20px 20px 20px;
+        }
+
+        .merge-cell {
+            grid-column: 1/3;
+        }
+
+        .grid-container-form input {
+            padding: 8px;
+            border: 1px #1880bd solid;
+            border-radius: 5px;
+        }
+
+        button[type="reset"] {
+            margin-right: 20px;
+        }
+
+        h1 {
+            color: white;
+            margin: 10px;
+        }
+
+        /*navigation bar */
+        .nav {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            float: right;
+            color: #e9e6e6;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .nav a.active {
+            background-color: #5b5e5ed8;
+            color: rgb(233, 230, 230);
+        }
+
+
+        .title_container {
+            width: calc(100vw - 120px);
+            height: 40vh;
+            background-image: linear-gradient(39deg, #0a344e, #2980B9), url(File-Images/home-3-1678x992e2.webp);
+            padding: 40px 60px;
+            background-size: cover;
+        }
+
+        .maintitle {
+            color: white;
+            letter-spacing: 10px;
+            font-size: 50px
+        }
+
+        .pagetitle {
+            color: white;
+            font-size: 24px;
+            width: 40%;
+            font-weight: lighter;
+            margin-left: 12px;
+        }
+
+        .Userdetailsbtn {
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            font-weight: 500;
+            margin: 10px;
+            padding: 10px;
+            text-decoration: none;
+        }
+        /* the invoice of products */
+        .invoice_container {
+            margin: 50px auto 50px auto;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+            background-color: rgba(255, 255, 255, 0.89);
+            padding: 15px 50px 50px 50px;
+            width: 54%;
+            border-radius: 5px;
+        }
+
+        .gridcontainer_summary {
+            width: 100%;
+            display: grid;
+            grid-template-columns:37% 38% 25%;
+            margin-top: 60px;
+        }
+        /*the total price*/
+        .total {
+            font-weight: 600;
+            margin: 0 29px;
+            text-align: right;
+            font-size: 22px;
+        }
+
+        .margin-top {
+            margin-top: 39px;
+        }
+        /* the desciption of the total bill*/
+        #totalbill_description {
+            color: #144e85;
+            margin-top: 48px !important;
+            font-size: 18px !important;
+        }
+
+        .header-row {
+            grid-template-rows: 50px !important;
+            border-top: 1px solid #144e85;
+            border-bottom: 1px solid #426881;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+
+        .grid-item {
+            margin: 2px !important;
+            padding: 10px;
+            background: rgba(27, 56, 99, 0.38);
+            border-radius: 5px;
+        }
+
+        .product-image-container {
+            margin: auto;
+            height: 150px;
+        }
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns:20% 35% 15% 10% 20%;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 6px;
+            box-shadow: 0 1rem 3rem rgba(24, 45, 34, .48);
+            background: rgba(255, 255, 255, 0.89);
+        }
+        .navigation ul {
+            margin: 0;
+        }
+
+        .product-image-container img {
+            object-fit: cover;
+        }
+
+        .header-row p {
+            padding: 0 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: inherit;
+        }
+
+        hr {
+            height: 1px;
+        }
+
+        .grid-item img, .cart-grid-item img {
+            width: 100%;
+            height: 100%;
+        }
+        .header-items img {
+            height: 100px;
+            width: 100px;
+        }
+        /*the footer*/
+        .footer{
+            background: #000000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 40px 0 10px;
+        }
+
+        .footer p{
+            color: #8a8a8a;
+        }
+
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .footer-col{
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        @media all and (max-width: 960px) {
+            .grid-container-form, .cartgrid {
+                width: 70vw;
+            }
+        }
+        /*drop down for sports and shop*/
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .button {
+            font-size: 17px;  
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 14px 14px;
+            background-color: inherit;
+        }
+
+        .dropdown .button:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 80px;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 13px 18px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        ul li a{
+            font-size: 18px;
+            color: #b5b5b5;
+            text-decoration: none;
+        }
+
+        ul li a:hover{
+            color: rgb(99, 99, 99);
+        }
+
+    </style>
+</head>
+
+<body>
+<!--HTML-->
+
+ <!--navigation bar-->
+ <div class="nav">
+    <a class="active" href="cartpage.html">Cart</a>
+    <a href="StudentDetails.html">About</a>
+    <a href="index1.html">Gallery</a>
+    <a href="Inquiries.html">Inquiries</a>
+    <a href="quiz.html">Quiz</a>
+    <div class="dropdown">
+        <button class="button">Shop</button>
+        <div class="dropdown-content">
+            <a href="racquet.html">Racquets</a>
+            <a href="balls.html">Balls</a>
+            <a href="shoes.html">Shoes</a>
+            <a href="clothes.html">Clothes</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="button">Sports</button> 
+        <div class="dropdown-content">
+            <a href="Tennis.html">Tennis</a>
+            <a href="Badminton.html">Badminton</a>
+            <a href="squash.html">Squash</a>
+            <a href="Tabletennis.html">Table Tennis</a>
+        </div>
+    </div>
+    <a href="index.html">Site map</a>
+    <a href="Home.html">Home</a>
+</div>
+<img src="logo.jpeg" alt="Logo">
+
+<!---title for shopping cart-->
+<div class="title_container">
+    <h1 class="maintitle">Shopping cart</h1>
+    <p class="pagetitle">Happiness is not in money, but in shopping.</p>
+    <a class="Userdetailsbtn" href="#contactForm">User Details</a>
+</div>
+
+
+<div class="cartgrid cartheader_row">
+    <p>Product</p>
+    <p>Name </p>
+    <p>Unit Price</p>
+    <p>Qnt</p>
+    <p>Subtotal</p>
+</div>
+<div id="selectedProducts">
+</div>
+
+<!--The form to get the user details-->
+<form id="contactForm" class="grid-container-form">
+    <div class="formcontrol_container">
+        <label for="fname">First Name:</label>
+        <input type="text" name="Firstname" id="fname" value="" placeholder="First name">
+    </div>
+
+    <div class="formcontrol_container">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="Lastname" id="lname" value="" placeholder="Last name">
+    </div>
+
+    <div class="formcontrol_container">
+        <label for="ContactNum">Contact Number:</label>
+        <input type="text" name="ContactNum" id="ContactNum" value="" placeholder="Contact number">
+    </div>
+
+    <div class="formcontrol_container">
+        <label for="Email">Email address:</label>
+        <input type="text" name="Email" id="Email" value="" placeholder="Email address">
+    </div>
+
+
+    <div class="formcontrol_container merge-cell">
+        <label for="Address">Address:</label>
+        <input type="text" name="Address" id="Address" value="" placeholder="Address">
+    </div>
+
+    <div class="merge-cell centerAlign">
+        <button type="reset" class="form-btn">Reset</button>
+        <button type="button" id="submitButton" class="form-btn">place order</button>
+    </div>
+
+</form>
+
+<!--display summary-->
+<div id="summaryContainer" class="hide">
+    <h1>Summary</h1>
+    <div class="invoice_container ">
+        <div class="gridcontainer_summary">
+            <div>
+                <p> Name:</p>
+                <p id="invoiceName"></p>
+                <p class="margin-top"> Email:</p>
+                <p id="invoiceEmail"></p>
+            </div>
+            <div>
+                <p>Contact Number:</p>
+                <p id="invoiceContactNumber"></p>
+                <p class="margin-top">Address:</p>
+                <p id="invoiceAddress"></p>
+            </div>
+            <div>
+                <h4 class="total" id="totalbill_description">Grand Total</h4>
+                <p class="total">Rs.<span id="total-bill">0</span></p>
+
+            </div>
+
+        </div>
+
+        <!--display products in summary-->
+        <div class="grid-container header-row">
+            <p>Product</p>
+            <p>Name </p>
+            <p>Unit Price</p>
+            <p>Qty</p>
+            <p>Subtotal</p>
+        </div>
+        <div id="invoiceSelectedProducts">
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<div class="footer">
+    <div class="footer-col">
+        <h2 style="text-align: left;"> ONLY HE WHO CAN SEE THE INVISIBLE CAN DO THE IMPOSSIBLE </h2>
+    </div>
+    <div class="footer-col">
+        <h3>Customer Service</h3>
+        <ul>
+            <li><a href="Editorpage.html">Edior Page</a></li>
+            <li><a href="sizeguide.png">Size Guide</a></li>
+            <li><a href="inquires.html">Feedback form</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+            <li><a href="https://Instagram.com">Instagram</a></li>
+            <li><a href="https://YouTube.com">Youtube</a></li>
+        </ul>
+    </div>
+    <hr>
+    <p class="footer-col" style="font-size: 18px;">Copyright 2022 - Sports.lk</p>
+</div>
+
+<!---JavaScript-->
+<script>
+
+
+function removeItems(button) {
+        var product = [];
+        if (sessionStorage.getItem("products") != null) {
+            product = JSON.parse(sessionStorage.getItem("products"));
+        }
+
+        product.splice(button.dataset.index, 1);
+        sessionStorage.setItem('products', JSON.stringify(product));
+        loadCart();
+    }
+
+    loadCart();
+
+    function loadCart() {
+        var product = [];
+        var product_List = "";
+        if (sessionStorage.getItem("products") != null) {
+            product = JSON.parse(sessionStorage.getItem("products"));
+
+        }
+        // loading the products using java script
+        for (var i = 0; i < product.length; i++) {
+            product_List += `<div class="cartgrid">
+        <div class="cartgrid_items"><img src="` + product[i].image + `" alt="shoes"></div>
+                <p class="title cartgrid_items"><B>` + product[i].title + `</p></B>
+                <p class="cartgrid_items"> Rs: ` + product[i].price + `</pcl>
+             <p class="cartgrid_items">x` + product[i].quantity + `</p>
+            <p class="cartgrid_items">` + `Rs:` + product[i].price * product[i].quantity + `</p>
+             <div class= "cartgrid_items"><button type="button" class="remove " data-index="` + i + `" onclick="removeItems(this)">Remove</button></div>
+        </div> `
+
+        }
+        document.getElementById("selectedProducts").innerHTML = product_List;
+
+    }
+
+
+    //validation of the user details
+    document.getElementById('submitButton').onclick = function () {
+        var form = document.getElementById('contactForm');
+        var f_name = form.elements[0].value;
+        var l_name = form.elements[1].value;
+        var email = form.elements[3].value;
+        var contactNum = form.elements[2].value;
+        var address = form.elements[4].value;
+
+        //product and quantity validation
+        if (sessionStorage.getItem("products") == null) {
+            alert("There should be at least one product in your cart to checkout ");
+            return false;
+        }
+
+        if (f_name === null || f_name === "") {
+            alert('Please enter your first name');
+            return false;
+        }
+
+        if (l_name === null || l_name === "") {
+            alert('Please enter your last name');
+            return false;
+        }
+
+        if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+            alert('Please enter a valid Email address');
+            return false;
+        }
+
+        if (isNaN(contactNum) || contactNum.length !== 10) {
+            alert('Please enter a valid Contact Number');
+            return false;
+        }
+
+        if (address === "" || address === null) {
+            alert("Please enter your address");
+            return false;
+        }
+
+        window.location.href = "#summaryContainer";
+        loadSummary();
+        document.getElementById("contactForm").reset();
+        clearCart();
+        return true;
+    }
+
+    function loadSummary() {
+        var total = 0;
+        var product = [];
+        var product_List = "";
+        if (sessionStorage.getItem("products") != null) {
+            product = JSON.parse(sessionStorage.getItem("products"));
+
+        }
+        //show summary
+        var summaryContainer = document.getElementById("summaryContainer");
+        summaryContainer.classList.remove("hide");
+        summaryContainer.classList.add("show");
+
+
+        //display user information
+        //getElementById returns an element object representing the element whose id property matches a specific string
+        var contactForm = document.getElementById("contactForm");
+        document.getElementById("invoiceName").innerHTML = contactForm.Firstname.value + " " + contactForm.Lastname.value;
+        document.getElementById("invoiceContactNumber").innerHTML = contactForm.ContactNum.value;
+        document.getElementById("invoiceEmail").innerHTML = contactForm.Email.value;
+        document.getElementById("invoiceAddress").innerHTML = contactForm.Address.value;
+
+
+        //display product information and the total in summary
+        for (var i = 0; i < product.length; i++) {
+
+            total += product[i].price * product[i].quantity;
+
+            product_List += `<div class="grid-container">
+        <div class="grid-item product-image-container"><img src="` + product[i].image + `" alt="shoes"></div>
+                <p class="title grid-item"><B>` + product[i].title + `</p></B>
+                <p class="grid-item">` + product[i].price + `</p>
+             <p class="grid-item">x` + product[i].quantity + `</p>
+            <p class="title grid-item">` + `Rs:` + product[i].price * product[i].quantity + `</p>
+
+        </div> `
+
+        }
+        document.getElementById("total-bill").innerHTML = total;
+        document.getElementById("invoiceSelectedProducts").innerHTML = product_List;
+
+    }
+
+    function clearCart() {
+        sessionStorage.clear();
+        loadCart();
+    }
+</script>
+
+</body>
+</html>

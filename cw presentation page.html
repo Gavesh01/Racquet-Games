@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="refresh" content="4; url='Home.html'" />
+    <title> Presentation Page </title>
+
+    <script>
+        var seconds=0;
+        function displayseconds(){
+            seconds+=1;
+            document.getElementById("secondsdisplay").innerText="This page will be redirected in "+seconds+" seconds..."
+        }
+        setInterval(displayseconds,1000);
+
+        function redirectpage() {
+            window.location="Home.html";
+        }
+        setTimeout('redirectpage()',4000);
+        
+        
+    </script>
+
+    <style>
+        body{
+            background-image: url('images/webpage.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .stn {
+            margin: 6px auto auto auto;
+            width: 200px;
+            border: 1px solid #426881;
+            background-color: aliceblue
+            
+        }
+
+        .stn th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #426881;
+
+        }
+        .stn td {
+            padding: 25px;
+            border: 1px solid rgb(19, 1, 1);
+        }
+           
+        
+        .centre {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;}
+    
+
+        
+
+    </style>
+
+</head>
+
+<body>
+    <img src="images/westministerlogo.jpeg" alt="westminister logo" width="250" height="150">
+    <img src="images/iitlogo.jpeg" alt="IIT logo" style="float: right; margin-right: 15px;" width="250" height="150">
+    <h1 style="text-align: center;"> Web design and development </h1>
+    <h2 style="text-align: center;"> Topic - Sports </h2>
+    <h3 style="text-align: center;"> Group -J6 </h3>
+    <h4 style="text-align: center;"> Members </h4>
+
+
+    <table class="stn" >
+        <tr>
+
+            <th> Name </th>
+            
+            <th> UOW number </th>
+
+            <th> IIT ID</th>
+      
+            
+        </tr>
+
+        <tr>
+            <td> Dulina Rathnayake </td>
+
+            <td> w1867205</td>
+
+            <td > 20210562 </td>
+        </tr>
+
+        <tr>
+            <td > Gavesh Dissanayake </td>
+
+            <td > w1870605</td>
+
+            <td> 20210127</td>
+        </tr>
+
+        <tr>
+            <td > Chathma Palliya Guruge </td>
+
+            <td > w1867207</td>
+
+            <td > 20210567</td>
+        </tr>
+
+        <tr>
+            <td > Aparna Willararachchi</td>
+
+            <td > w1867206</td>
+
+            <td > 20210565</td>
+        </tr>
+
+        
+
+    
+    </table>
+
+    <div id="secondsdisplay"></div>
+    <!-- <img src="images/loading.gif" class="centre" height="30" width="30"/> -->
+
+
+    
+</body>
+</html>

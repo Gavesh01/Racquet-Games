@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Sports.LK </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .nav {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            float: right;
+            color: #e9e6e6;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .nav a.active {
+            background-color: #5b5e5ed8;
+            color: rgb(233, 230, 230);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 30%;
+            padding: 5px;
+
+            padding: 5px 8px;
+            margin: left;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: flex;
+        }
+
+
+        .product-image img {
+            width: 100%;
+            height: calc(100vh - 43px);
+            object-fit: cover;
+   
+        }
+
+        .description {
+            /*margin: 50% 30% 70% 30%;*/
+            padding-top: 0%;
+            
+        }
+
+        .footer{
+            background: #000000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 40px 0 10px;
+        }
+
+        .footer p{
+            color: #8a8a8a;
+        }
+
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .footer-col{
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        p {
+            color: rgb(0, 0, 0);
+            text-indent: 40px;
+            text-align: center;
+        }
+        p{
+            color: rgb(104, 100, 100);
+        }
+
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .equip{
+            margin-left: 40px;
+        }
+
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .button {
+            font-size: 17px;  
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 14px 14px;
+            background-color: inherit;
+        }
+
+        .dropdown .button:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 80px;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 13px 18px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        ul li a{
+            font-size: 18px;
+            color: #b5b5b5;
+            text-decoration: none;
+        }
+
+        ul li a:hover{
+            color: rgb(99, 99, 99);
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+     <!--navigation bar-->
+    <div class="nav">
+        <a href="cartpage.html">Cart</a>
+        <a href="StudentDetails.html">About</a>
+        <a href="index1.html">Gallery</a>
+        <a href="Inquiries.html">Inquiries</a>
+        <a href="quiz.html">Quiz</a>
+        <div class="dropdown">
+            <button class="button">Shop</button>
+            <div class="dropdown-content">
+                <a href="racquet.html">Racquets</a>
+                <a href="balls.html">Balls</a>
+                <a href="shoes.html">Shoes</a>
+                <a href="clothes.html">Clothes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="button">Sports</button> 
+            <div class="dropdown-content">
+                <a href="Tennis.html">Tennis</a>
+                <a class="active" href="Badminton.html">Badminton</a>
+                <a href="squash.html">Squash</a>
+                <a href="Tabletennis.html">Table Tennis</a>
+            </div>
+        </div>
+        <a href="index.html">Site map</a>
+        <a href="Home.html">Home</a>
+        
+    </div>
+    <img src="logo.jpeg" alt="Logo">
+
+    <!--products-->
+    <div class="product-image">
+        <img src="Badminton/images/salman-hossain-saif-bfVgB-TbJWM-unsplash.jpg" alt="shuttlecock" id="ProductImage1"/>
+    </div>
+
+    <div class="description">
+        <h1 style="text-align: center;">Badminton -Your life Game</h1>
+    </div>
+
+    <p>Badminton is a racquet game in which players hit a shuttlecock through a net with racquets. 
+        The most prevalent varieties of the sport are "singles" (of one player per side) and "doubles" (with 2 players per side). 
+        Badminton is frequently played as a casual outdoor sport in a yard or on the beach, with serious games taking place on a rectangular indoor court. 
+        The shuttlecock is struck with the racquet and landed within the other team's half of the court to earn points.</p>
+
+   
+    <h3 style="text-align: center;">Court</h3>
+    <p>The court is rectangular, with a net dividing it into two halves. Although badminton regulations allow a court to be marked for singles alone, most courts are marked for both singles and doubles play.
+        The singles court is longer than the doubles court, although both are the same width.
+        The only difference is that the doubles courts has a short serve-length dimension, which might be confusing for younger players.</p>
+    <img src="Badminton/images/court1.png" alt="court" style="width: 30%;"/>
+    
+    <h3 style="text-align: center;">Serving</h3>
+    <p>Whenever the player serves, the shuttlecock should cross over the opponents' court's short service line to avoid a fault.
+        Until the server strikes the shuttlecock, the server and receiver must stay within respective service courts, 
+        avoiding touching the boundary lines. The other two players are free to stand anywhere they like as long as they don't hinder the server's 
+        or receiver's eyesight.</p>
+    <img src="Badminton/images/serve.png" alt="serve" width="250px" height="400px"/>
+
+    <h3 style="color: #000000; text-align: center;" class="equip">Equipment</h3>
+    <ul style="text-align: center; color: rgb(104, 100, 100);">
+        <li>Racquets</li>
+        <li>Strings</li>
+        <li>Grips</li>
+        <li>Shuttlecock</li>
+        <li>Shoes</li>
+    </ul>
+
+    <h3 style="color: #000000; text-align: center;">Singles</h3>
+    <p>Because only one person can covering the full court, singles strategies rely on driving the opposition to move as much as possible; this explains that singles strokes are typically directed to the court's corners.
+        Lifts and clears are combined with drop shots and net shots to take use of the length of the court.
+        Because the smasher has no companion to back up their effort and thus is vulnerable to a well-placed return, 
+        smashing is less common in singles than in doubles. Furthermore, in singles, when energy saving is important, frequent smashing may be taxing.</p>
+    <img src="Badminton/images/single.jpg" alt="single" width="250px" height="300px"/>
+
+    <h3 style="color: #000000; text-align: center;">Doubles</h3>
+    <p>Both teams will attempt to achieve and maintain an offensive advantage, smashing downward when the chance comes.
+        When at all feasible, a pair will attack in the ideal offensive configuration, with one player smashing down from the back court and their partner intercepting all smashes returns save the lift.
+        If the attacker in the back court hits a drop shot, their partner will advance into to the forecourt to threaten the net.
+        If a couple is unable to hit downward, they will attempt to obtain the attack by using flat strokes.
+        If a couple is forced to lift or clear the shuttlecock, they must defend: they will take up a side-by-side posture on the back midcourt, 
+        allowing them to cover the whole width of their court against the opponents' smashes.In doubles, players typically smash to the center area between
+        two players to capitalize on confusion and conflicts.</p>
+    <img src="Badminton/images/double.jpeg" alt="double" width="250px" height="300px"/>
+
+    <h3 style="color: #000000; text-align: center;">Mixed Doubles</h3>
+    <p>Both couples in mixed doubles often strive to maintain an offensive formation with the lady in front and the male in rear.
+        This is due to the fact that male players are often much stronger and can thus create more powerful smashes.
+        Mixed doubles, as a result, need better tactical awareness and finer positional play. Competitors who are astute will attempt to 
+        invert the optimum position by driving the woman to the back and the male to the front. Mixed players must be cautious and meticulous 
+        in their shot selection in order to avoid this threat.</p>
+    <img style="margin-bottom: 20px;" src="Badminton/images/mixeddouble.jpeg" alt="mixeddouble" width="250px" height="300px"/>
+
+    
+
+
+<!--footer-->
+<div class="footer">
+    <div class="footer-col">
+        <h2 style="text-align: left;"> ONLY HE WHO CAN SEE THE INVISIBLE CAN DO THE IMPOSSIBLE </h2>
+    </div>
+    <div class="footer-col">
+        <h3>Customer Service</h3>
+        <ul>
+            <li><a href="Editorpage.html">Edior Page</a></li>
+            <li><a href="sizeguide.png">Size Guide</a></li>
+            <li><a href="inquires.html">Feedback form</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+            <li><a href="https://Instagram.com">Instagram</a></li>
+            <li><a href="https://YouTube.com">Youtube</a></li>
+        </ul>
+    </div>
+    <hr>
+    <p class="footer-col" style="font-size: 18px;">Copyright 2022 - Sports.lk</p>
+</div>
+
+
+
+</body>
+
+</html>

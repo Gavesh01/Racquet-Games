@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Sports.LK </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .nav {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            float: right;
+            color: #e9e6e6;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .nav a.active {
+            background-color: #5b5e5ed8;
+            color: rgb(233, 230, 230);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 30%;
+            padding: 5px;
+
+            padding: 5px 8px;
+            margin: left;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: flex;
+        }
+
+        .grid-container {
+            width: 68vw;
+            margin: 70px auto;
+            display: grid;
+            grid-template-columns: 38% 38% 38%;
+            margin-right: auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .add-cart {
+            background: #000000;
+            padding: 9px;
+            border-radius: 5px;
+            border: 0;
+            margin: 35px auto 30px auto;
+            width: 100%;
+            display: block;
+            color: white;
+            font-weight: 600;
+        }
+
+        .grid-container2 {
+            width: 68vw;
+            margin: 70px auto;
+            display: grid;
+            grid-template-columns: 38% 38% 38%;
+            margin-right: auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .grid-container3 {
+            width: 68vw;
+            margin: 70px auto;
+            display: grid;
+            grid-template-columns: 38% 38% 38%;
+            margin-right: auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .grid-container4 {
+            width: 68vw;
+            margin: 70px auto;
+            display: grid;
+            grid-template-columns: 38% 38% 38%;
+            margin-right: auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .product {
+            margin: 10px;
+        }
+
+        .product-image img {
+            width: 100%;
+        }
+
+        .add-cart:focus {
+            background-color: #30302f;
+        }
+
+        .footer{
+            background: #000000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 40px 0 10px;
+        }
+
+        .footer p{
+            color: #8a8a8a;
+        }
+
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .footer-col{
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .button {
+            font-size: 17px;  
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 14px 14px;
+            background-color: inherit;
+        }
+        
+        .dropdown .button:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 80px;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 13px 18px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .logo{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        ul li a{
+            font-size: 18px;
+            color: #b5b5b5;
+            text-decoration: none;
+        }
+
+        ul li a:hover{
+            color: rgb(99, 99, 99);
+        }
+
+        
+    </style>
+<script>
+
+
+    var productElements = [];
+
+    //addding product element ids
+    for(var i=1; i<13; i++) {
+        productElements.push({
+            titleId: "productTitle"+i,
+            quantityElementId: "productQuantity"+i,
+            unitPriceElId: "productprice"+i,
+            productImageId: "ProductImage"+i,
+        })
+    }
+
+    function addCart(btn) {
+        var selectedItems = [];
+        var addCartIds = ["add-cart1", "add-cart2", "add-cart3", "add-cart4", "add-cart5",
+            "add-cart6", "add-cart7", "add-cart8","add-cart9","add-cart10","add-cart11","add-cart12"];
+        if (sessionStorage.getItem("products") != null) {
+            selectedItems = JSON.parse(sessionStorage.getItem("products"));
+        }
+
+        var productIndex = addCartIds.indexOf(btn.id);
+        if (document.getElementById(productElements[productIndex].quantityElementId).value !== "") {
+            selectedItems.push(
+                {
+                    title: document.getElementById(productElements[productIndex].titleId).innerHTML,
+                    price: document.getElementById(productElements[productIndex].unitPriceElId).innerHTML,
+                    quantity: document.getElementById(productElements[productIndex].quantityElementId).value,
+                    image: document.getElementById(productElements[productIndex].productImageId).src,
+                }
+            );
+
+        }
+        // quantity validation
+        else alert("Please select a valid quantity");
+
+        // storing selected items in session storage
+        sessionStorage.setItem('products', JSON.stringify(selectedItems));
+
+    }
+
+    function calculateTotal() {
+
+    }
+
+</script>
+</head>
+
+<body>
+
+    <!--navigation bar-->
+    <div class="nav">
+        <a href="cartpage.html">Cart</a>
+        <a href="Editorpage.html">About</a>
+        <a href="index1.html">Gallery</a>
+        <a href="Inquiries.html">Inquiries</a>
+        <a href="quiz.html">Quiz</a>
+        <div class="dropdown">
+            <button class="button">Shop</button>
+            <div class="dropdown-content">
+                <a href="racquet.html">Racquets</a>
+                <a href="balls.html">Balls</a>
+                <a href="shoes.html">Shoes</a>
+                <a class="active" href="clothes.html">Clothes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="button">Sports</button> 
+            <div class="dropdown-content">
+                <a href="Tennis.html">Tennis</a>
+                <a href="Badminton.html">Badminton</a>
+                <a href="squash.html">Squash</a>
+                <a href="Tabletennis.html">Table Tennis</a>
+            </div>
+        </div>
+        <a href="index.html">Site map</a>
+        <a href="Home.html">Home</a>
+    </div>
+    <img class="logo" src="logo.jpeg" alt="Logo">
+
+    <!--products-->
+    <div id="productGrid" class="grid-container">
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/tennis1.png" alt="tshirt" id="ProductImage1"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle1" style="color: #868686"> Nike Court Slam Polo Men - White</p>
+                <p style="color: #30302f;">Rs. <span id="productprice1">4500</span></p>
+                <label for="productQuantity1" class="quantity"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity1" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart1" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/tennis4.png" alt="short" id="ProductImage2"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle2" style="color: #868686"> Men's shorts</p>
+                <p style="color: #30302f;">Rs. <span id="productprice2">3500</span></p>
+                <label for="productQuantity2" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity2" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart2" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/tennis5.png" alt="shirt" id="ProductImage3"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle3" style="color: #868686;"> WOMEN’S CREW NECK SHIRT</p>
+                <p style="color: #30302f;">Rs. <span id="productprice3">5500</span></p>
+                <label for="productQuantity3" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity3" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart3" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="productGrid2" class="grid-container2">
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/badminton1.png" alt="tshirt" id="ProductImage4" width="250" height="350"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle4" style="color: #868686" ;> Yonex men's crew neck shirt </p>
+                <p style="color: #30302f;">Rs. <span id="productprice4">3000</span></p>
+                <label for="productQuantity4" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity4" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart4" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/badminton2.png" alt="women dress" id="ProductImage5" width="250"
+                    height="350"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle5" style="color: #868686" ;> Women's dress (with inner shorts)</p>
+                <p style="color: #30302f;">Rs. <span id="productprice5">5000</span></p>
+                <label for="producQuantity5" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity5" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart5" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/badminton3.png" alt="women dress" id="ProductImage6" width="250"
+                    height="350"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle6" style="color: #868686" ;> Men's short</p>
+                <p style="color: #30302f;">Rs. <span id="productprice6">2000</span></p>
+                <label for="producQuantity6" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity6" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart6" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="productGrid3" class="grid-container3">
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/squah1.webp" alt="tshirt" id="ProductImage7" width="250" height="280"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle7" style="color: #868686" ;> Slazenger Court Polo Mens </p>
+                <p style="color: #30302f;">Rs. <span id="productprice7">1500</span></p>
+                <label for="productQuantity7" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity7" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart7" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/squash2.webp" alt="tshirt" id="ProductImage8" width="250" height="280"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle8" style="color: #868686" ;> Carlton A Blade Shorts Mens </p>
+                <p style="color: #30302f;">Rs. <span id="productprice8">1000</span></p>
+                <label for="productQuantity8" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity8" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart8" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/squah3.webp" alt="tshirt" id="ProductImage9" width="250" height="280"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle9" style="color: #868686" ;> Babolat core Skirt Ladies </p>
+                <p style="color: #30302f;">Rs. <span id="productprice9">2000</span></p>
+                <label for="productQuantity9" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity9" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart9" onclick="addCart(this)">Add To Cart</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="productGrid4" class="grid-container4">
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/tabletennis1.jpg" alt="tshirt" id="ProductImage10" width="250" height="250"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle10" style="color: #868686" ;> Tosy Shirt Table tennis
+                </p>
+                <p style="color: #30302f;">Rs. <span id="productprice10">1500</span></p>
+                <label for="productQuantity10" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity10" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart10" onclick="addCart(this)">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/tabletennis2.jpg" alt="tshirt" id="ProductImage11" width="250" height="250"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle11" style="color: #868686" ;> Tosy Lady Shirt Table tennis
+                </p>
+                <p style="color: #30302f;">Rs. <span id="productprice11">1800</span></p>
+                <label for="productQuantity11" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity11" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart11" onclick="addCart(this)">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="clothes/images/tabletennis3.jpg" alt="tshirt" id="ProductImage12" width="250" height="250"/>
+            </div>
+            <div class="product-details">
+                <p class="title" id="productTitle12" style="color: #868686" ;> Tosy Lady Shirt Table tennis
+                </p>
+                <p style="color: #30302f;">Rs. <span id="productprice12">2500</span></p>
+                <label for="productQuantity12" class="quantity" style="color: #30302f;"> Quantity </label>
+                <select class="quantity-input" name="quantity" id="productQuantity12" onchange="calculateTotal()">
+                    <option value=" ">select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="button" class="add-cart" id="add-cart12" onclick="addCart(this)">Add To Cart</button>
+            </div>
+        </div>
+
+    </div>
+
+ <!--footer-->
+<div class="footer">
+    <div class="footer-col">
+        <h2 style="text-align: left;"> ONLY HE WHO CAN SEE THE INVISIBLE CAN DO THE IMPOSSIBLE </h2>
+    </div>
+    <div class="footer-col">
+        <h3>Customer Service</h3>
+        <ul>
+            <li><a href="Editorpage.html">Edior Page</a></li>
+            <li><a href="sizeguide.png">Size Guide</a></li>
+            <li><a href="inquires.html">Feedback form</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+            <li><a href="https://Instagram.com">Instagram</a></li>
+            <li><a href="https://YouTube.com">Youtube</a></li>
+        </ul>
+    </div>
+    <hr>
+    <p class="footer-col" style="font-size: 18px;">Copyright 2022 - Sports.lk</p>
+</div>
+
+
+</body>
+
+</html>

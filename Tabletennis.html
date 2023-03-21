@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Sports.LK </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* navigation bar */
+        .nav {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            float: right;
+            color: #e9e6e6;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .nav a.active {
+            background-color: #5b5e5ed8;
+            color: rgb(233, 230, 230);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: flex;
+        }
+
+
+        .product-image img {
+            width: 100%;
+            height: calc(100vh - 43px);
+            object-fit: cover;
+   
+        }
+
+        .description {
+            /*margin: 50% 30% 70% 30%;*/
+            padding-top: 0%;
+            
+        }
+        /* footer */
+        .footer{
+            background: #000000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 40px 0 10px;
+        }
+
+        .footer p{
+            color: #8a8a8a;
+        }
+
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .footer-col{
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        p {
+            color: rgb(0, 0, 0);
+            text-indent: 40px;
+            text-align: center;
+        }
+        p{
+            color: rgb(104, 100, 100);
+        }
+
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .offstrokes{
+            margin-left: 40px;
+        }
+
+        .defestrokes{
+            margin-left: 40px;
+        }
+        /* drop down for sports and shop */
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .button {
+            font-size: 17px;  
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 14px 14px;
+            background-color: inherit;
+        }
+
+        .dropdown .button:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 80px;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 13px 18px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        ul li a{
+            font-size: 18px;
+            color: #b5b5b5;
+            text-decoration: none;
+        }
+
+        ul li a:hover{
+            color: rgb(99, 99, 99);
+        }
+
+
+
+        
+    </style>
+
+</head>
+
+<body>
+     <!--navigation bar-->
+    <div class="nav">
+        <a href="cartpage.html">Cart</a>
+        <a href="StudentDetails.html">About</a>
+        <a href="index1.html">Gallery</a>
+        <a href="Inquiries.html">Inquiries</a>
+        <a href="quiz.html">Quiz</a>
+        <div class="dropdown">
+            <button class="button">Shop</button>
+            <div class="dropdown-content">
+                <a href="racquet.html">Racquets</a>
+                <a href="balls.html">Balls</a>
+                <a href="shoes.html">Shoes</a>
+                <a href="clothes.html">Clothes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="button">Sports</button> 
+            <div class="dropdown-content">
+                <a href="Tennis.html">Tennis</a>
+                <a href="Badminton.html">Badminton</a>
+                <a href="squash.html">Squash</a>
+                <a class="active" href="Tabletennis.html">Table Tennis</a>
+            </div>
+        </div>
+        <a href="index.html">Site map</a>
+        <a href="Home.html">Home</a>
+    </div>
+    <img src="logo.jpeg" alt="Logo">
+
+    <!--Description of the sport-->
+    <div class="product-image">
+        <img src="Tennistennis/Images/Tennistable.jpg" alt="Tennistable" id="ProductImage1"/>
+    </div>
+
+    <div class="description">
+        <h1 style="text-align: center;">Table Tennis - The one learns to play with a ball will stand for long</h1>
+    </div>
+
+    <!--Introduction of the sport-->
+    <p>Table tennis, also known as ping-pong or whiff-whaff, is a game in which two or four players use small solid rackets to smash a lightweight ball, also known as a ping-pong ball, back and forth across a table.
+        The game is played on a hard table with a net separating the players. Except for the first serve, the regulations are as follows: 
+        players must let a ball hit toward them to bounce once on their side of the table before returning it to bounce at least once on the other side. 
+        When a player fails to return the ball within the regulations, a point is awarded.</p>
+
+    <!--Start of the game-->
+    <h3 style="text-align: center;">Starting a game</h3>
+    <p>The first service is chosen by lot, usually a coin toss, according to ITTF regulation 2.13.1. One player (or the umpire/scorer) 
+        may also hide the ball in one or both hands, generally under the table, allowing the opposing player to guess whose hand the ball is in. 
+        Depending on whether the guess was true or incorrect, the "winner" has the option of serving, receiving, or choosing which side of the table to utilize. 
+        (Playing the ball back and forth three times and then playing out the point is a typical but non-sanctioned strategy.) "Serve to play," "rally to serve," 
+        "play for serve," or "volley for serve" are all terms used to describe this.)</p>
+    <img src="Tennistennis/Images/startinggame.jpeg" alt="startinggame" style="width: 30%;"/>
+
+    <!--Service and return of the table tennis-->
+    <h3 style="text-align: center;">Service and return</h3>
+    <p>In game play, the player who serves the ball starts the game. The server stands with the ball on the open palm of the non-carrying hand, known as the freehand, and tosses the ball directly upward, 
+        without spin, at least 16 cm (6.3 in) high.
+        On the ball's fall, the server smashes the ball with the racket such that it first reaches his court and then immediately contacts the receiver's court without hitting the net assembly. 
+        Many players do not toss the ball upward in casual games; nonetheless, doing so is legally forbidden and might offer the serving player an unfair advantage.</p>
+    <img src="Tennistennis/Images/serviceandreturn.jpeg" alt="service and return" width="210" height="250"/>
+
+    <!--Doubles service-->
+    <h3 style="color: #000000; text-align: center;">Doubles game - service</h3>
+    <p>Table tennis may also be played in couples, in addition to solitary games. Since 1988, both singles and doubles have been contested in major competitions, including the Olympic Games and the Commonwealth Games. The table is bisected by a line painted along the long axis to form doubles courts.
+        The only purpose of this line is to make the doubles service rule easier to follow, which states that the serve must originate from the right hand "box" in such a way 
+        that the first bounce of the serve lands in said right hand box and then lands at least once in the opponent side's right hand box (far left box for server), 
+        or the receiving pair will score a point.</p>
+    <img src="Tennistennis/Images/ttdouble.png" alt="doubles" width="250" height="280"/>
+
+<!--Grips in table tennis -->
+    <h3 style="color: #000000; text-align: center;">Grips - Penhold</h3>
+    <p>The penhold grip gets its name from the way the racket is held, which is similar to how a writing tool is used.
+        The style of play among penhold players might be rather different from one another. The most common form, known as the Chinese penhold style, 
+        includes curling the middle, ring, and fourth fingers on the rear of the blade while keeping all three fingers in contact. When the middle, ring, 
+        and fourth fingers are straight but yet stacked, or when all fingers are contacting the back of the racket but are still in contact with one another,
+        a hybrid of the two methods can arise. For an away-from-the-table style of play, Japanese and Korean penholders frequently employ a square-headed racket.
+        For better grip and comfort, these square-headed rackets traditionally include a block of cork on top of the handle and a thin coating of cork on the back of the racket.</p>
+    <img src="Tennistennis/Images/penholder.jpeg" alt="grip" width="250" height="300"/>
+
+    <h3 style="color: #000000; text-align: center;">Grips - Shakehand</h3>
+    <p>The shakehand grip gets its name from the fact that the racket is held as if it were a handshake.
+        Though it is frequently called the "tennis" or "Western" grip, it is unrelated to the Western tennis grip, which was popularized on the West Coast
+        of the United States and involves rotating the racket 90 degrees and playing with the wrist twisted such that the knuckles face the target on contact. 
+        "Western" in table tennis refers to Western countries since this is the grip that players from Europe and the Americas have virtually exclusively used.</p>
+    <img style="margin-bottom: 20px;" src="Tennistennis/Images/shakehand.jpeg" alt="shakehand" width="250" height="300"/>
+    
+    <!--Offensive strokes-->
+    <h3 style="color: #000000; text-align: center;" class="offstrokes">Offensive strokes</h3>
+    <ul style="text-align: center; color: rgb(104, 100, 100);">
+        <li>Hit</li>
+        <li>Loop</li>
+        <li>Counter-hit</li>
+        <li>Flip</li>
+        <li>Smash</li>
+    </ul>
+    
+    <!--Defensive strokes-->
+    <h3 style="color: #000000; text-align: center;" class="defestrokes">Defensive strokes</h3>
+    <ul style="text-align: center; color: rgb(104, 100, 100);">
+        <li>Push</li>
+        <li>Chop</li>
+        <li>Block</li>
+        <li>Lob</li>
+    </ul>
+    <img style="margin-bottom: 20px;" src="Tennistennis/Images/defensive.jpeg"  alt="Tennis defensive" width="250" height="250"/>
+
+    <!--Types of spin-->
+    <h3 style="color: #000000; text-align: center;">Backspin</h3>
+    <p>Backspin occurs when the ball's bottom half rotates away from the player.
+        At the professional level, this is accomplished by striking the ball's base with a downward movement.
+        Backspin is typically utilized in service to keep the ball low and defend against it.
+        because it is more difficult to create an attacking return, despite the fact that most professionals serve sidespin with either backspin or topspin.</p>
+    <img style="margin-bottom: 20px;" src="Tennistennis/Images/backspin.jpeg" alt="backspin" width="250" height="280"/>
+
+    <h3 style="color: #000000; text-align: center;">Topspin</h3>
+    <p>On the early half of the ball curve, the topspin stroke has a smaller impact.
+        The axis of spin, like the backspin stroke, remains nearly perpendicular to the ball's trajectory, enabling the Magnus 
+        force to govern the subsequent curvature. The ball dips downhill as it approaches the opposite side after reaching the top of 
+        the curve before rebounding. The topspin will accelerate the ball on the bounce, similar to how a wheel that is already spinning will 
+        accelerate when it makes contact with the ground.</p>
+    <img style="margin-bottom: 20px;" src="Tennistennis/Images/topspin.jpeg" alt="topspin" width="250" height="280"/>
+
+    <h3 style="color: #000000; text-align: center;">Sidespin</h3>
+    <p>This sort of spin is most commonly used during service, when the racket's contact angle may be changed more readily.
+        Sidespin, unlike the other two strategies, causes the ball to spin on a vertical rather than horizontal axis.
+        The axis of rotation remains nearly perpendicular to the ball's motion. In this case, the Magnus effect will still influence the ball's curvature 
+        to some extent. Another distinction is that, unlike backspin and topspin, sidespin has a negligible influence on the ball's bounce, similar to how a 
+        spinning top would not go left or right if its axis of rotation were perfectly vertical.</p>
+    <img style="margin-bottom: 20px;" src="Tennistennis/Images/sidespin.jpeg" alt="sidespin" width="250" height="280"/>
+
+    <h3 style="color: #000000; text-align: center;">Corkspin</h3>
+    <p>This style of spin is mainly only employed when serving, however it is also used in the lob on occasion at the professional level. 
+        Corkspin (or "drill-spin") has the axis of spin generally parallel to the ball's trajectory, therefore the Magnus effect has little or no 
+        influence on the trajectory of a cork-spun ball: upon bouncing, the ball will dart right or left (depending to the direction of the spin), 
+        greatly complicating the return.</p>
+    <img style="margin-bottom: 20px;" src="Tennistennis/Images/corkspin.jpeg" alt="sidespin" width="250" height="280"/>
+
+<!--footer-->
+<div class="footer">
+    <div class="footer-col">
+        <h2 style="text-align: left;"> ONLY HE WHO CAN SEE THE INVISIBLE CAN DO THE IMPOSSIBLE </h2>
+    </div>
+    <div class="footer-col">
+        <h3>Customer Service</h3>
+        <ul>
+            <li><a href="Editorpage.html">Edior Page</a></li>
+            <li><a href="sizeguide.png">Size Guide</a></li>
+            <li><a href="inquires.html">Feedback form</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+            <li><a href="https://Instagram.com">Instagram</a></li>
+            <li><a href="https://YouTube.com">Youtube</a></li>
+        </ul>
+    </div>
+    <hr>
+    <p class="footer-col" style="font-size: 18px;">Copyright 2022 - Sports.lk</p>
+</div>
+
+
+</body>
+
+</html>

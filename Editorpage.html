@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<head>
+    <!--Title-->
+    <title> Sports.LK </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #bbbbbb;
+        }
+
+        #details{
+            color: #4b3832;
+        }
+
+        #prespage{
+            font-size: 25px;
+            color: #3c2f2f;
+        }
+
+        .presdetails{
+            color: #536872;
+        }
+
+        #extrawkpage {
+            color: #4b3832;
+            font-size: 25px;
+        }
+
+        .extrawork {
+            color: #536872;
+        }
+        /* navigation bar */
+        .nav {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            float: right;
+            color: #e9e6e6;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .nav a.active {
+            background-color: #5b5e5ed8;
+            color: rgb(233, 230, 230);
+        }
+        /* dropdown for the sports and shop navigation bar */
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .button {
+            font-size: 15px;  
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 13px 18px;
+            background-color: inherit;
+        }
+
+        .dropdown .button:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 80px;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 13px 18px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #productpage{
+            font-size: 25px;
+            color: #3c2f2f;
+        }
+
+        .productdetails{
+            color: #536872;
+        }
+
+        /* footer */
+        .footer{
+            background: #000000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 40px 0 10px;
+        }
+
+        .footer p{
+            color: #8a8a8a;
+        }
+
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .footer-col{
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        ul li a{
+            font-size: 18px;
+            color: #b5b5b5;
+            text-decoration: none;
+        }
+
+        ul li a:hover{
+            color: rgb(99, 99, 99);
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!--navigation bar-->
+    <div class="nav">
+        <a href="cartpage.html">Cart</a>
+        <a href="StudentDetails.html">About</a>
+        <a href="index1.html">Gallery</a>
+        <a href="Inquiries.html">Inquiries</a>
+        <a href="quiz.html">Quiz</a>
+        <div class="dropdown">
+            <button class="button">Shop</button>
+            <div class="dropdown-content">
+                <a href="racquet.html">Racquets</a>
+                <a href="balls.html">Balls</a>
+                <a href="shoes.html">Shoes</a>
+                <a href="clothes.html">Clothes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="button">Sports</button> 
+            <div class="dropdown-content">
+                <a href="Tennis.html">Tennis</a>
+                <a href="Badminton.html">Badminton</a>
+                <a href="squash.html">Squash</a>
+                <a href="Tabletennis.html">Table Tennis</a>
+            </div>
+        </div>
+        <a href="index.html">Site map</a>
+        <a href="Home.html">Home</a>
+    </div>
+
+    <!---my personal details-->
+    <div id="details">
+        <p>Name : Dulina Rathnayake</p>
+        <p>UOW ID: w1867205</p>
+        <p>Student ID :20210562</p>
+        <p>Role : Student 1</p>
+        <p>Tasks completed :</p>
+    </div>
+    <br>
+    <p id="prespage">Presentation Page</p>
+    <!---The details about the presentation page-->
+    <ul class="presdetails">
+        <li>This page mainly consists of the topics,the StudentID's and details of the group members.</li>
+        <li>After 4 seconds the page gets redirected to the Home page of the website.</li>
+    </ul>
+
+    <p id="productpage">Buy Products</p>
+    <!---The details about the products page-->
+    <ul class="productdetails">
+        <li>There are 4 webpages linked to the shop page. </li>
+        <li>The webpages are clothes,shoes,racquets and balls.</li>
+        <li>When the user adds a product from either of the webpages and adds the quantity and press the add to cart button the product will get added to the cart.</li>
+        <li>The user then have to enter his/her details in the form given.</li>
+        <li>Once the user enters correct information and click the place order button a summary would be shown.</li>
+    </ul>
+    <!----The details about my extra work-->
+    <p id="extrawkpage">Extra Work</p>
+
+    <ul class="extrawork">
+        <li>I created a webpage for table tennis in sports section</li>
+    </ul>
+    <br><br><br><br>
+    <br><br><br><br>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-col">
+            <h2 style="text-align: left;"> ONLY HE WHO CAN SEE THE INVISIBLE CAN DO THE IMPOSSIBLE </h2>
+        </div>
+        <div class="footer-col">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="sizeguide.png">Size Guide</a></li>
+                <li><a href="inquires.html">Feedback form</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://twitter.com">Twitter</a></li>
+                <li><a href="https://Instagram.com">Instagram</a></li>
+                <li><a href="https://YouTube.com">Youtube</a></li>
+            </ul>
+        </div>
+        <hr>
+        <p class="footer-col" style="font-size: 18px;">Copyright 2022 - Sports.lk</p>
+    </div>
+
+</body>
+</html>

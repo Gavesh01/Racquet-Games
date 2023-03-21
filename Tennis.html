@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Sports.LK </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .nav {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            float: right;
+            color: #e9e6e6;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .nav a.active {
+            background-color: #5b5e5ed8;
+            color: rgb(233, 230, 230);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 30%;
+            padding: 5px;
+
+            padding: 5px 8px;
+            margin: left;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: flex;
+        }
+
+
+        .product-image img {
+            width: 100%;
+            height: calc(100vh - 43px);
+            object-fit: cover;
+   
+        }
+
+        .description {
+            /*margin: 50% 30% 70% 30%;*/
+            padding-top: 0%;
+            
+        }
+
+        .footer{
+            background: #000000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 40px 0 10px;
+        }
+
+        .footer p{
+            color: #8a8a8a;
+        }
+
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        .footer-col{
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+        p {
+            color: rgb(0, 0, 0);
+            text-indent: 40px;
+            text-align: center;
+        }
+        p{
+            color: rgb(104, 100, 100);
+        }
+
+        img{ 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .button {
+            font-size: 17px;  
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 14px 14px;
+            background-color: inherit;
+        }
+
+        .dropdown .button:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 80px;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 13px 18px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        ul li a{
+            font-size: 18px;
+            color: #b5b5b5;
+            text-decoration: none;
+        }
+
+        ul li a:hover{
+            color: rgb(99, 99, 99);
+        }
+        
+    </style>
+
+</head>
+
+<body>
+     <!--navigation bar-->
+    <div class="nav">
+        <a href="cartpage.html">Cart</a>
+        <a href="StudentDetails.html">About</a>
+        <a href="index1.html">Gallery</a>
+        <a href="Inquiries.html">Inquiries</a>
+        <a href="quiz.html">Quiz</a>
+        <div class="dropdown">
+            <button class="button">Shop</button>
+            <div class="dropdown-content">
+                <a href="racquet.html">Racquets</a>
+                <a href="balls.html">Balls</a>
+                <a href="shoes.html">Shoes</a>
+                <a href="clothes.html">Clothes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="button">Sports</button> 
+            <div class="dropdown-content">
+                <a class="active" href="Tennis.html">Tennis</a>
+                <a href="Badminton.html">Badminton</a>
+                <a href="squash.html">Squash</a>
+                <a href="Tabletennis.html">Table Tennis</a>
+            </div>
+        </div>
+        <a href="index.html">Site map</a>
+        <a href="Home.html">Home</a>
+    </div>
+    <img src="logo.jpeg" alt="Logo">
+
+    <!--products-->
+    <div class="product-image">
+        <img src="Tennis/Images/tennis.jpg" alt="Tennis" id="ProductImage1"/>
+    </div>
+
+    <div class="description">
+        <h1 style="text-align: center;">Tennis - A tough sport - there are no draws</h1>
+    </div>
+
+    <p>Tennis is a racquet sport that may be played solo (singles) or in 2 teams of two players per (doubles).
+        With a tennis racquet linked by string, each player smashes a hollow rubber ball coated in felt over or over a net into the opponent's court. 
+        The purpose of the game is to move the ball such that the competitor is unable to return it. The player who is unable to give it back in a legal way is 
+        not awarded a point, but the opposing player is.</p>
+
+   
+    <h3 style="text-align: center;"> Court</h3>
+    <p>Tennis is a sport that takes place on a rectangular, flat surface. For singles matches, 
+        the court is 78 feet (23.77 meters) long and 27 feet (8.2 meters) wide; for doubles matches,
+        it is 36 feet (11 meters). In order for players to reach overrun balls, there needs to be more 
+        open space surrounding the court. A net runs the length of the court, parallel to the baselines, 
+        and divides it into two equal halves. It is supported by a rope or metal cable with a diameter of 
+        no more than 0.8 cm (13.3 in). At the posts, the net is 3 feet 6 inches (1.07 m) high, while in the center, 
+        it is 3 feet (0.91 m) high.The net posts for a doubles net are 3 feet (0.91 m) outside the doubles court on each side, or 3 feet (0.91 m)
+        outside the singles court on each side for a singles net.</p>
+    <img src="Tennis/Images/tennis1.png" alt="court" style="width: 15%"/>
+    
+    <h3 style="text-align: center;">Play of a single point</h3>
+    <p>Tennis is a flat, rectangular sport played on a rectangular court. The court is 78 feet long (23.77 meters) and 27 feet wide (8.2 meters) for singles
+         matches and 36 feet long (23.77 meters) and broad for doubles events (11 meters). There has to be more free area around the court for athletes to reach 
+         overrun balls. The court is divided into two equal half by a net that travels the length of the court, parallel to the baselines. A rope or steel cable 
+         with a thickness of little more than 0.8 cm supports it (13.3 in). The net is 3 feet 6 inches (1.07 m) high at the posts and 3 feet (0.91 m) high in the
+          center. The posts that make up a doubles net.</p>
+    <img src="Tennis/Images/tennis2.jpeg" alt="serve" width="210px" height="180px"/>
+
+    <h3 style="color: #000000; text-align: center;">Game</h3>
+    <p>A game consists of a set of points that are all scored by the same player. The game is won by the first person to score at least four points in total and
+         at least two points more than the opponent. The running score for each game is presented in a tennis-specific manner, with scores ranging from 0 to 3 
+         points being represented to as "love," "15," "30," and "40." The score is labeled "deuce" rather than "40–40" if each player has scored at least three 
+         points and their scores are equal at 40. The game score is "advantage" for the player in the lead if each side has managed to score three points and one 
+         player has one point more than his opponent.</p>
+    <img src="Tennis/Images/tennis3.jpeg" alt="Game" width="250px" height="300px"/>
+
+    <h3 style="color: #000000; text-align: center;">Set</h3>
+
+    <p>A set is a collection of games in which service alternates between them and terminates when the overall number of matches won meets the specified criteria. 
+        In order to win a set, a player must win at least six games and two games more than his opponent. If either a single player has won six games and the opposition has won five, an extra game is played.
+        You'll win this set 7–5 if the guy in the front of you wins this game. If the leading player actually wins (tying the set 6–6), 
+        a tiebreak is played. A tiebreak, which has its own set of regulations, lets one player to win one more game, and therefore the set, 
+        for a total score of 7–6.To win a tiebreaker game, you must gain at least seven points while outperforming your opposition by at least two points.</p>
+    <img src="Tennis/Images/tennis4.jpeg" alt="Set" width="250px" height="300px"/>
+    
+    <h3 style="color: #000000; text-align: center;">Forehand-Grip</h3>
+    <p>For a right-handed player, the forehand is a stroke that begins on the right side of the body, traverses across the body when contact is made with the ball, 
+        and finishes on the left side of the body. A number of grips may be used to perform the forehand, and their prevalence has evolved throughout time. 
+        The most significant are the continental, eastern, semi-western, and western.
+        Bill Johnston, a frail little player from the 1920s, was widely considered as possessing the finest forehand ever, 
+        a shot he struck shoulder-high with a western grip.</p>
+    <img style="margin-bottom: 20px;" src="Tennis/Images/tennis5.jpeg" alt="forehand grip" width="250px" height="300px"/>
+    
+    <h3 style="color: #000000; text-align: center;">Backhand-Grip</h3>
+    <p>For right-handed players, the backhand is a stroke that starts on the left side of the body, goes all across body when the ball gets in contact, 
+        and finishes on the right side of the body. Because it can be executed either with one or both hands, it is hard to master than the forehand. 
+        For the bulk of the twentieth century, the backhand was executed with one hand, either using an eastern or a continental grip.Vivian McGrath and 
+        John Bromwich of Australia were the first notable players to use two hands in the 1930s, although they were anomalies. 
+        The two-handed grip was popularized in the 1970s by Björn Borg, Chris Evert, Jimmy Connors, and subsequently Mats Wilander and Marat Safin, 
+        and is currently used by a large number of the world's greatest players, including Novak Djokovic, Rafael Nadal, and Serena Williams.</p>
+    <img style="margin-bottom: 20px;" src="Tennis/Images/tennis6.jpeg" alt="Backhand grip" width="250px" height="300px"/>
+   
+    <h3 style="color: #000000; text-align: center;">Other shots</h3>
+    <p>A volley is a stroke that is returned to the opposition while the ball is still in mid-air. To hit the ball into an open section of the opponent's court, 
+        it is often made using a stiff-wristed punching action. The half volley is made by striking the ball on the rise shortly after it has rebounded, 
+        also in the similar area of the net, with the racket close to the ground. The player smashes a swooping volley out of air as he approaches the net. 
+        It's an attacking stroke that returns the ball to the opponent's court faster than a standard volley, allowing the opponent to prepare less.</p>
+
+
+<!--footer-->
+<div class="footer">
+    <div class="footer-col">
+        <h2 style="text-align: left;"> ONLY HE WHO CAN SEE THE INVISIBLE CAN DO THE IMPOSSIBLE </h2>
+    </div>
+    <div class="footer-col">
+        <h3>Customer Service</h3>
+        <ul>
+            <li><a href="Editorpage.html">Edior Page</a></li>
+            <li><a href="sizeguide.png">Size Guide</a></li>
+            <li><a href="inquires.html">Feedback form</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+            <li><a href="https://Instagram.com">Instagram</a></li>
+            <li><a href="https://YouTube.com">Youtube</a></li>
+        </ul>
+    </div>
+    <hr>
+    <p class="footer-col" style="font-size: 18px;">Copyright 2022 - Sports.lk</p>
+</div>
+
+
+
+</body>
+
+</html>
